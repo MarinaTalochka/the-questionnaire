@@ -1,3 +1,6 @@
+const form = document.querySelector(".form");
+const nickname = document.querySelector('.name');
+
 form.addEventListener("submit", async (event) => {
 
   event.preventDefault();
