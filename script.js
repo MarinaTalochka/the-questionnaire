@@ -1,9 +1,17 @@
 const form = document.querySelector(".form");
-const nickname = document.querySelector('.name');
+const nameNew = document.querySelector('.name');
+const family = document.querySelector('.secondName')
+const emailNew = document.querySelector('.email');
+const phoneNew = document.querySelector('.phone');
+
 
 form.addEventListener("submit", async (event) => {
-
+  const nameValue = nameNew.value;
+  const familyValue = family.value;
+  const emailValue = emailNew.value;
+  const phoneValue = phoneNew.value;
   event.preventDefault();
+  
   try {
     const response = await fetch("https://polinashneider.space/user", {
       method: "POST",
@@ -13,10 +21,10 @@ form.addEventListener("submit", async (event) => {
         "Authorization": "Bearer: MarinaTalochka"
       },
       body: JSON.stringify({
-        "name": "Марина",
-        "secondName": "Толочко",
-        "phone": 80336555250,
-        "email": "marina.tolochko.1990@mail.ru",
+        "name": nameValue,
+        "secondName": familyValue,
+        "phone": phoneValue,
+        "email": emailValue,
         "agree": true
       })
     });
