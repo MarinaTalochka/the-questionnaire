@@ -1,16 +1,16 @@
 const form = document.querySelector(".form");
-const nameNew = document.querySelector('.name');
-const family = document.querySelector('.secondName')
-const emailNew = document.querySelector('.email');
-const phoneNew = document.querySelector('.phone');
+const nameNew = document.querySelector('#name');
+const family = document.querySelector('#secondName')
+const emailNew = document.querySelector('#email');
+const phoneNew = document.querySelector('#phone');
 
 
 form.addEventListener("submit", async (event) => {
+  event.preventDefault();
   const nameValue = nameNew.value;
   const familyValue = family.value;
   const emailValue = emailNew.value;
   const phoneValue = phoneNew.value;
-  event.preventDefault();
   
   try {
     const response = await fetch("https://polinashneider.space/user", {
